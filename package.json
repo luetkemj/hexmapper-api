@@ -1,0 +1,36 @@
+{
+  "name": "hexmapper-api",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run clean && yarn && npm run lint && babel src -d dist",
+    "clean:coverage": "rimraf coverage",
+    "clean:dist": "rimraf dist",
+    "clean:node_modules": "rimraf node_modules",
+    "clean": "npm run clean:coverage && npm run clean:dist && npm run clean:node_modules",
+    "lint:eslint": "eslint .",
+    "lint": "npm run lint:eslint",
+    "production": "node dist/index.js",
+    "start": "nodemon src/index.js --exec babel-node",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "debug-caller": "2.2.0",
+    "express": "4.15.3"
+  },
+  "devDependencies": {
+    "babel-cli": "6.24.1",
+    "babel-eslint": "7.2.3",
+    "babel-preset-env": "1.5.2",
+    "babel-preset-stage-3": "6.24.1",
+    "eslint": "4.1.1",
+    "eslint-config-airbnb-base": "11.2.0",
+    "eslint-plugin-import": "2.6.1",
+    "jest": "20.0.4",
+    "nodemon": "1.11.0",
+    "rimraf": "2.6.1"
+  }
+}
