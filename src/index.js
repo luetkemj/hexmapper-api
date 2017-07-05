@@ -1,16 +1,19 @@
 import express from 'express';
 
+import blobs from './controllers/blobs';
+// import cellularAutomata from './controllers/cellular-automata';
+
 const logger = require('./utils/logger')();
 
 const app = express();
 
-app.get('/', (req, res) => {
-  res.send('hello');
-});
+app.get('/blobs', (req, res) => blobs(req, res));
+
+// app.get('/cellular-automata', (req, res) => {
+//   res.send(cellularAutomata);
+// });
 
 app.listen(3010, () => {
-  console.log('bunnC');
-  logger.log('bunn');
   logger.log(`
 :::    ::: :::::::::: :::    :::     :::     ::::::::: :::::::::
 :+:    :+: :+:        :+:    :+:   :+: :+:   :+:    :+:   :+:
